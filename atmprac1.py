@@ -33,8 +33,32 @@ while True:
     print("4. Exit")
     break
 
-op = input("Enter the choices you want")
+op = input("Enter the choices you want: ")
+def check_balance(balance):
+    return balance
 
-    
-    
-    
+def deposit(balance, amount):
+    return balance + amount
+
+def withdraw(balance, amount):
+    if amount <= balance:
+        return balance - amount
+    else:
+        print("Insufficient funds")
+        return balance
+while op not in ["1" , "2" , "3" , "4"]:
+    print("Invalid choice. Enter again.")
+    op = input("Enter the choices you want: ")
+if op == "1":
+    print("Your balance is: ", check_balance(initbalance))
+elif op == "2":
+    amount = int(input("Enter the amount to deposit: "))
+    initbalance = deposit(initbalance, amount)
+    print("Amount deposited successfully")
+elif op == "3":
+    amount = int(input("Enter the amount to withdraw: "))
+    initbalance = withdraw(initbalance, amount)
+elif op == "4":
+    print("Thank you for using our ATM")
+else:
+    print("Invalid choice")
