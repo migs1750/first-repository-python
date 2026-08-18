@@ -13,7 +13,7 @@ if cards == "card":
     cpin = 123069    
     attempt = 3
     while attempt > 0:
-        pin = int(input("Enter your pin number: "))
+        pin = type(input("Enter your pin number: "))
         if pin == cpin:
             print("login success")
             break
