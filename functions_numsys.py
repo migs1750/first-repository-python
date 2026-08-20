@@ -1,44 +1,26 @@
-print("Welcome to the Number System Converter!")
-print("This tool allows you to convert numbers between different numeral systems. Supported systems include binary, octal, decimal, and hexadecimal.")
-
-print("\nPlease select the source numeral system:")
-print("1. Decimal")  
-print("2. Binary")
-print("3. Octal")
-print("4. Hexadecimal")
-
-source_choice = input("Enter the number corresponding to your choice (1-4): ")
-while source_choice not in ['1', '2', '3', '4']:
-    print("Invalid choice. Please select a valid option (1-4).")
-    source_choice = input("Enter the number corresponding to your choice (1-4): ")
-
-if source_choice == '1':
+def decimal_to_other_systems():
     decimal_number = input("Enter the decimal number to convert: ")
-    conversion_choice = input("Enter the target numeral system (binary, octal, hexadecimal): ").lower()
-
+    conversion_choice = input("Choose the target number system (binary, octal, hexadecimal): ").lower()
     while conversion_choice not in ['binary', 'octal', 'hexadecimal']:
-        print("Invalid choice. Please select a valid target numeral system.")
-        conversion_choice = input("Enter the target numeral system (binary, octal, hexadecimal): ").lower()
+        print("Invalid choice. Please choose from binary, octal, or hexadecimal.")
+        conversion_choice = input("Choose the target number system (binary, octal, hexadecimal): ").lower()
 
     if conversion_choice == 'binary':
         binary_result = bin(int(decimal_number))[2::]
         print("The binary representation of" ,decimal_number , "is: " ,binary_result)
     if conversion_choice == 'octal':
         octal_result = oct(int(decimal_number))[2::]    
-        print("The octal representation of" ,decimal_number , "is: " ,octal_result)
+        print("The octal representation of" ,decimal_number , "is: " ,octal_result)   
     if conversion_choice == 'hexadecimal':
         hexadecimal_result = hex(int(decimal_number))[2::]
-        print("The hexadecimal representation of" ,decimal_number , "is: " ,hexadecimal_result)
+        print("The hexadecimal representation of" ,decimal_number , "is: " ,hexadecimal_result) 
 
-
-
-elif source_choice == '2':
+def binary_to_other_systems():
     binary_number = input("Enter the binary number to convert: ")
-    conversion_choice = input("Enter the target numeral system (decimal, octal, hexadecimal): ").lower()
-
+    conversion_choice = input("Choose the target number system (decimal, octal, hexadecimal): ").lower()
     while conversion_choice not in ['decimal', 'octal', 'hexadecimal']:
-        print("Invalid choice. Please select a valid target numeral system.")
-        conversion_choice = input("Enter the target numeral system (decimal, octal, hexadecimal): ").lower()
+        print("Invalid choice. Please choose from decimal, octal, or hexadecimal.")
+        conversion_choice = input("Choose the target number system (decimal, octal, hexadecimal): ").lower()
 
     if conversion_choice == 'decimal':
         decimal_result = int(binary_number, 2)
@@ -50,13 +32,12 @@ elif source_choice == '2':
         hexadecimal_result = hex(int(binary_number, 2))[2::]
         print("The hexadecimal representation of" ,binary_number , "is: " ,hexadecimal_result)
 
-elif source_choice == '3':
+def octal_to_other_systems():
     octal_number = input("Enter the octal number to convert: ")
-    conversion_choice = input("Enter the target numeral system (decimal, binary, hexadecimal): ").lower()
-
+    conversion_choice = input("Choose the target number system (decimal, binary, hexadecimal): ").lower()
     while conversion_choice not in ['decimal', 'binary', 'hexadecimal']:
-        print("Invalid choice. Please select a valid target numeral system.")
-        conversion_choice = input("Enter the target numeral system (decimal, binary, hexadecimal): ").lower()
+        print("Invalid choice. Please choose from decimal, binary, or hexadecimal.")
+        conversion_choice = input("Choose the target number system (decimal, binary, hexadecimal): ").lower()
 
     if conversion_choice == 'decimal':
         decimal_result = int(octal_number, 8)
@@ -68,13 +49,12 @@ elif source_choice == '3':
         hexadecimal_result = hex(int(octal_number, 8))[2::]
         print("The hexadecimal representation of" ,octal_number , "is: " ,hexadecimal_result)
 
-elif source_choice == '4':
+def hexadecimal_to_other_systems():
     hexadecimal_number = input("Enter the hexadecimal number to convert: ")
-    conversion_choice = input("Enter the target numeral system (decimal, binary, octal): ").lower()
-
+    conversion_choice = input("Choose the target number system (decimal, binary, octal): ").lower()
     while conversion_choice not in ['decimal', 'binary', 'octal']:
-        print("Invalid choice. Please select a valid target numeral system.")
-        conversion_choice = input("Enter the target numeral system (decimal, binary, octal): ").lower()
+        print("Invalid choice. Please choose from decimal, binary, or octal.")
+        conversion_choice = input("Choose the target number system (decimal, binary, octal): ").lower()
 
     if conversion_choice == 'decimal':
         decimal_result = int(hexadecimal_number, 16)
@@ -85,3 +65,27 @@ elif source_choice == '4':
     elif conversion_choice == 'octal':
         octal_result = oct(int(hexadecimal_number, 16))[2::]
         print("The octal representation of" ,hexadecimal_number , "is: " ,octal_result)
+
+
+
+
+
+
+
+print("Hello welcome to the number system converter!")
+source_choice = input("Choose the source number system (1: Decimal, 2: Binary, 3: Octal, 4: Hexadecimal): ")
+while source_choice not in ['1', '2', '3', '4']:
+    print("Invalid choice. Please choose from 1, 2, 3, or 4.")
+    source_choice = input("Choose the source number system (1: Decimal, 2: Binary, 3: Octal, 4: Hexadecimal): ")
+
+if source_choice == '1':
+    decimal_to_other_systems()
+elif source_choice == '2':
+    binary_to_other_systems()
+elif source_choice == '3':
+    octal_to_other_systems()
+elif source_choice == '4':
+    hexadecimal_to_other_systems()
+else:
+    print("Invalid choice. Please choose from 1, 2, 3, or 4.")
+    
