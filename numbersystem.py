@@ -21,13 +21,13 @@ if source_choice == '1':
         conversion_choice = input("Enter the target numeral system (binary, octal, hexadecimal): ").lower()
 
     if conversion_choice == 'binary':
-        binary_result = bin(int(decimal_number))[2:]
+        binary_result = bin(int(decimal_number))[2::]
         print(f"The binary representation of {decimal_number} is: {binary_result}")
     if conversion_choice == 'octal':
-        octal_result = oct(int(decimal_number))[2:]
+        octal_result = oct(int(decimal_number))[2::]    
         print(f"The octal representation of {decimal_number} is: {octal_result}")
     if conversion_choice == 'hexadecimal':
-        hexadecimal_result = hex(int(decimal_number))[2:]
+        hexadecimal_result = hex(int(decimal_number))[2::]
         print(f"The hexadecimal representation of {decimal_number} is: {hexadecimal_result}")
 
 
@@ -44,10 +44,10 @@ elif source_choice == '2':
         decimal_result = int(binary_number, 2)
         print(f"The decimal representation of {binary_number} is: {decimal_result}")
     elif conversion_choice == 'octal':
-        octal_result = oct(int(binary_number, 2))[2:]
+        octal_result = oct(int(binary_number, 2))[2::]
         print(f"The octal representation of {binary_number} is: {octal_result}")
     elif conversion_choice == 'hexadecimal':
-        hexadecimal_result = hex(int(binary_number, 2))[2:]
+        hexadecimal_result = hex(int(binary_number, 2))[2::]
         print(f"The hexadecimal representation of {binary_number} is: {hexadecimal_result}")
 
 elif source_choice == '3':
@@ -62,10 +62,10 @@ elif source_choice == '3':
         decimal_result = int(octal_number, 8)
         print(f"The decimal representation of {octal_number} is: {decimal_result}")
     elif conversion_choice == 'binary':
-        binary_result = bin(int(octal_number, 8))[2:]
+        binary_result = bin(int(octal_number, 8))[2::]
         print(f"The binary representation of {octal_number} is: {binary_result}")
     elif conversion_choice == 'hexadecimal':
-        hexadecimal_result = hex(int(octal_number, 8))[2:]
+        hexadecimal_result = hex(int(octal_number, 8))[2::]
         print(f"The hexadecimal representation of {octal_number} is: {hexadecimal_result}")
 
 elif source_choice == '4':
@@ -80,8 +80,8 @@ elif source_choice == '4':
         decimal_result = int(hexadecimal_number, 16)
         print(f"The decimal representation of {hexadecimal_number} is: {decimal_result}")
     elif conversion_choice == 'binary':
-        binary_result = bin(int(hexadecimal_number, 16))[2:]
+        binary_result = bin(int(hexadecimal_number, 16))[2::]
         print(f"The binary representation of {hexadecimal_number} is: {binary_result}")
     elif conversion_choice == 'octal':
-        octal_result = oct(int(hexadecimal_number, 16))[2:]
+        octal_result = oct(int(hexadecimal_number, 16))[2::]
         print(f"The octal representation of {hexadecimal_number} is: {octal_result}")
