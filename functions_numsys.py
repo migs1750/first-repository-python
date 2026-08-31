@@ -6,6 +6,7 @@ def decimal_to_other_systems():
         conversion_choice = input("Choose the target number system (binary, octal, hexadecimal): ").lower()
 
     if conversion_choice == 'binary':
+        
         binary_result = bin(int(decimal_number))[2::]
         print("The binary representation of" ,decimal_number , "is: " ,binary_result)
     if conversion_choice == 'octal':
